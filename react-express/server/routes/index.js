@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 
 var mongoose = require('mongoose');
-var model = require('../models/model');
+var model = require('../models/users');
 var Demo = model.Demo;
 
 //此处用来连接数据库
@@ -14,7 +14,7 @@ router.get('/', function(req, res, next) {
 });
 
 //这里写一个添加一个用户的操作
-router.post('/adduser',function(req,res,next){
+router.post('/api/adduser',function(req,res,next){
     //首先创造一个对象用来针对这个mongodb的数据库
     var demo = new Demo({
     	uid: req.body.uid,

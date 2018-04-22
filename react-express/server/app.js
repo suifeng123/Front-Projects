@@ -7,12 +7,8 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
-//进行跨域的操作
-const proxy = require('express-http-proxy');
-
 var app = express();
 
-//服务器使用跨域操作
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
