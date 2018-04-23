@@ -1,12 +1,21 @@
 <template>
   <div id="app">
-    <router-view/>
+
+    <div v-show="$router.fullPath != '/login'">
+      <LeftContainer></LeftContainer>
+       <router-view/>
+    </div>
   </div>
 </template>
 
 <script>
+  import login from '@/components/Login';
+  import LeftContainer from '@/components/LeftContainer';
 export default {
-  name: 'App'
+  name: 'App',
+  components:{
+      LeftContainer
+  }
 }
 </script>
 
