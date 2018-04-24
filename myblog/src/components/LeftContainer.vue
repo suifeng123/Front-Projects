@@ -11,7 +11,7 @@
          <span>Express</span>
        </template>
        <el-menu-item-group>
-         <el-menu-item index="1-1">文件上传</el-menu-item>
+         <el-menu-item index="1-1" @click="$router.push('fileUpload')">文件上传</el-menu-item>
          <el-menu-item index="1-2">中间件</el-menu-item>
        </el-menu-item-group>
 

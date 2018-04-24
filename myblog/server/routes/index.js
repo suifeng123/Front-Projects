@@ -5,6 +5,10 @@ var mongoose = require('mongoose');
 var model = require('../models/users');
 var Demo = model.Demo;
 
+//进行文件上传时需要加载的插件
+var multer = require('multer');
+var upload = multer({dest:'upload_tmp/'});
+
 //此处用来连接数据库
 mongoose.connect('mongodb://localhost/users');
 
@@ -34,6 +38,12 @@ router.post('/api/adduser',function(req,res,next){
     	console.log('用户创建成功');
     })
 });
+
+//进行必要的上传的路由信息
+router.post('/upload',upload.any(),function(req,res,next){
+     console.log("进行上传的操作");
+     console.log(req.files);// 打印上传文件的信息
+})
 
 
 
