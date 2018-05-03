@@ -12,6 +12,11 @@ var upload = multer({dest:'upload_tmp/'});
 //此处用来连接数据库
 mongoose.connect('mongodb://localhost/users');
 
+
+function  checkLogin(req,res){
+
+}
+
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index', { title: '首页' });
@@ -42,7 +47,9 @@ router.post('/api/adduser',function(req,res,next){
 //进行必要的上传的路由信息
 router.post('/api/upload',upload.any(),function(req,res,next){
      console.log("进行上传的操作");
-     console.log(req.files);// 打印上传文件的信息
+     console.log(req.body.file);// 打印上传文件的信息
+
+
 })
 
 
