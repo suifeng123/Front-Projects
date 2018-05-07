@@ -24,7 +24,7 @@ export default new Router({
       name: 'Login',
       component: Login
     },{
-      path:'/api/upload',
+      path: '/upload',
       redirect:'/fileUpload'
     }
   ]

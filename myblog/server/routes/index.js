@@ -12,7 +12,7 @@ var upload = multer({dest:'upload_tmp/'});
 //此处用来连接数据库
 mongoose.connect('mongodb://localhost/users');
 
-
+//这里是检查登录的
 function  checkLogin(req,res){
 
 }
@@ -22,10 +22,24 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: '首页' });
 });
 
+//验证登录的时候
+router.post('/api/login',function(req,res,next){
+  res.writeHead(200,{'Content-Type':'text/html;charset=utf-8'});//设置response编码为utf-8
+ //对前端返回数据
+  var data = {
+     status: '0',
+     meg: 'login',
+     data:{
+       output:'用户登录成功'
+     }
+  };
+
+  //用户灯亮度成功后返回给前端必要的数据
+  res.end(JSON.stringify(data));
+
+})
 //这里写一个添加一个用户的操作
 router.post('/api/adduser',function(req,res,next){
-    console.log("进行跨域的操作");
-    console.log(req.body);
     //首先创造一个对象用来针对这个mongodb的数据库
     var demo = new Demo({
     	uid: req.body.uid,
@@ -41,7 +55,13 @@ router.post('/api/adduser',function(req,res,next){
     	}
     	//创建成功的话不进行任何操作
     	console.log('用户创建成功');
+      //创建用户成功后向前端发送一个
+
     })
+
+  res.setHeader('Set-Cookie', 'name=binbinfang;path=/;max-age=1000;');
+  console.log("设置cookie成功");
+    res.send()
 });
 
 //进行必要的上传的路由信息

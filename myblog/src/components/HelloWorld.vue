@@ -34,14 +34,19 @@ export default {
   },
   methods:{
       onSubmit(){
+        console.log('进行提交');
         this.axios.post('/api/adduser',{
           "uid": this.form.id,
           "content": this.form.content,
           "title": this.form.title
         }).then((res) => {
+          console.log("前端进行返回的数据");
           console.log(res);
 
-        })
+        }).catch((err) =>{
+           console.log(err);
+
+       })
       }
   }
 }

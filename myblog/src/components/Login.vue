@@ -36,7 +36,17 @@
   methods:{
     onSubmit(){
       //登录成功后登录
-      this.$router.push('dashboard');
+      this.axios.post('/api/login',{
+        "username": this.form.username,
+        "password": this.form.password
+      }).then((res) => {
+        this.$router.push('dashboard');
+      }).catch((err) => {
+         console.log("登录失败");
+         console.log(err);
+
+    })
+
     }
   }
   }
