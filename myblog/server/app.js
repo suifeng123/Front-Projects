@@ -7,9 +7,30 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
+//使用session
+var session = require('express-session');
+var MongoStore = require('connect-mongo')(session);
+
+//设置一个setting
+var setting = {
+  cookieSecret:'wang',
+  db:'wblog',
+  host: 'localhost',
+  port: 27017
+}
 
 var app = express();
 
+app.use(session({
+  secret: setting.cookieSecret,
+  key: setting.db, //cookie 名称
+  cookie:{maxAge: 1000 * 3600}, // 一个小时的有效时间
+  resave: false,
+  saveUninitialized: true,
+  store: new MongoStore({
+    url:'mongodb://localhost/wblog'
+  })
+}));
 //服务器使用跨域操作
 
 // view engine setup

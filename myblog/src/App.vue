@@ -23,6 +23,8 @@ export default {
      Login,
   },
   mounted(){
+    //在这里判断是否还存储在cookie 如果不存在的话 弹出框 提示用户cookie过期
+    console.log()
   }
 }
 </script>

@@ -33,7 +33,8 @@ router.post('/api/login',function(req,res,next){
        output:'用户登录成功'
      }
   };
-
+  //打印一下req中的session
+  console.log(req.session.cookie);
   //用户灯亮度成功后返回给前端必要的数据
   res.end(JSON.stringify(data));
 

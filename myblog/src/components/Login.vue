@@ -40,6 +40,7 @@
         "username": this.form.username,
         "password": this.form.password
       }).then((res) => {
+        //在这里获得的服务器端的反应，这里你来决定是否登录
         this.$router.push('dashboard');
       }).catch((err) => {
          console.log("登录失败");
