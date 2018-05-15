@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import HelloWorld from '@/components/HelloWorld'
 import FileUpload from '@/components/FileUpload'
 import Login from '@/components/Login'
+import CSS from '@/components/CSS'
 Vue.use(Router)
 
 export default new Router({
@@ -23,9 +24,15 @@ export default new Router({
       path: '/login',
       name: 'Login',
       component: Login
-    },{
+    },
+    {
+        path:'/css',
+        name: 'CSS',
+        component: CSS
+    },
+    {
       path: '/upload',
-      redirect:'/fileUpload'
+      redirect: '/fileUpload'
     }
   ]
 })

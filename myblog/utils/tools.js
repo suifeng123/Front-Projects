@@ -48,6 +48,33 @@ var arr = [{
 
 }];
 
-arrayRemove(arr,"name","wang");
-console.log("打印最终获得数组");
+//写一版快速排序的写法
+function quickSort(arr){
+  if(arr.length <= 1){
+    return arr;
+  }
+
+  var pivotIndex = Math.floor(arr.length / 2);
+
+  var pivot = arr.splice(pivotIndex,1)[0];
+
+  var left = [];
+
+  var right = [];
+
+  for(var i = 0 ; i < arr.length ; i++){
+    if(arr[i] < pivot){
+      left.push(arr[i]);
+    }else{
+      right.push(arr[i]);
+    }
+  }
+
+  return quickSort(left).concat([pivot],quickSort(right));
+}
+
+var arr = [1,4,3,2,5];
+console.log("在排序之前的数组为");
 console.log(arr);
+console.log("在排序之后的数组为");
+console.log(quickSort(arr));
