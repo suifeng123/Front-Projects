@@ -78,3 +78,57 @@ console.log("在排序之前的数组为");
 console.log(arr);
 console.log("在排序之后的数组为");
 console.log(quickSort(arr));
+
+//一种函数的高级写法
+function foo(){
+  if(a!=b){
+    foo = function(){
+      console.log("aaa");
+    }
+  }else{
+    foo = function(){
+      console.log("bbb");
+    }
+  }
+  return foo();
+}
+
+
+var foo = (function(){
+    if(a!=b){
+      foo = function(){
+        console.log("aaa");
+      }
+    }else{
+      foo = function(){
+        console.log("bbb");
+      }
+    }
+})();
+
+//自己写的函数柯里化函数
+function  curry(fn){
+  var args = Array.prototype.slice.call(arguments,1);  //获取参数的第一个参数
+  return function(){
+    let innerArgs = Array.prototype.slice.call(arguments);
+    let finalArgs =  args.concat(innerArgs);
+    return fn.apply(null,finalArgs);
+  }
+}
+
+f1(2) =f2(f3,1);
+
+function f3(arg1,arg2){
+      return arg1 + arg2;
+}
+
+function f2(f3,1);{
+    //将f3 作为一个函数传输进 f2 中
+    var args = Array.prototype.slice.call(arguments,1);
+
+    return function(){
+      var innerArgs = Array.prototype.slice.call(arguments);
+      var finalArgs = args.concat(innerArgs);
+      return fn.apply(null,finalArgs);
+    }
+}

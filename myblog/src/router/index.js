@@ -4,6 +4,8 @@ import HelloWorld from '@/components/HelloWorld'
 import FileUpload from '@/components/FileUpload'
 import Login from '@/components/Login'
 import CSS from '@/components/CSS'
+import Javascript from '@/components/Javascript'
+import Prototype from '@/components/Prototype'
 Vue.use(Router)
 
 export default new Router({
@@ -29,6 +31,25 @@ export default new Router({
         path:'/css',
         name: 'CSS',
         component: CSS
+    },
+    {
+       path:'/javascript',
+       name:'javacript',
+       component:Javascript,
+       meta:{
+         title:'javascript 常见面试题'
+       },
+      children:[
+        {
+          path: '/prototype',
+          name:'Prototype',
+          component:Prototype,
+        }
+      ]
+    },
+    {
+      path:'/javascript',
+      redirect:'/javascript/prototype'
     },
     {
       path: '/upload',
