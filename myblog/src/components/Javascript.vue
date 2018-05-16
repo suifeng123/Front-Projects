@@ -22,8 +22,6 @@
 <style scoped>
   .main {
     position: absolute;
-    left: 25%;
-
     width: 50%;
     height:50%;
   }

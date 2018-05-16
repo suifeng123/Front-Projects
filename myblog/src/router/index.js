@@ -37,11 +37,11 @@ export default new Router({
        name:'javacript',
        component:Javascript,
        meta:{
-         title:'javascript 常见面试题'
+         title:'javascript 常见问题'
        },
       children:[
         {
-          path: '/prototype',
+          path: 'prototype',
           name:'Prototype',
           component:Prototype,
         }
