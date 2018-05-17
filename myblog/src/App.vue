@@ -6,7 +6,7 @@
     <div v-show="$route.fullPath != '/login'">
       <LeftContainer></LeftContainer>
     </div>
-    <div v-show="$route.fullPath != '/login'">
+    <div v-show="$route.fullPath != '/login'" style="margin-top:-960px;left:200px;position:relative;">
 
        <router-view/>
     </div>
@@ -34,8 +34,11 @@ export default {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
+
   color: #2c3e50;
-  margin-top: 60px;
+
 }
+  body{
+    margin:0px;
+  }
 </style>

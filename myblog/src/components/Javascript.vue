@@ -1,6 +1,6 @@
 <template>
  <div class="main">
-   <el-button type="primary" @click="$router.push({name:'Prototype'})">原型</el-button>
+
    <router-view></router-view>
  </div>
 </template>
@@ -20,10 +20,6 @@
 </script>
 
 <style scoped>
-  .main {
-    position: absolute;
-    width: 50%;
-    height:50%;
-  }
+
 
 </style>

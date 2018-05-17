@@ -1,6 +1,7 @@
 <template>
-<div style="position:absolute;left:40%;">
-  <p>继承:在一个对象的基础上创建新的对象的过程，原型是指在这个过程中作为基础的对象。</p>
+<div style="background:#ededed;width:400px;height:400px;">
+  <span>111</span>
+  <span>222</span>
 </div>
 </template>
 
@@ -8,6 +9,13 @@
     export default {}
 </script>
 
-<style>
+<style scoped>
+  span{
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    margin:10px 20px;
+    background: greenyellow;
+  }
 
 </style>

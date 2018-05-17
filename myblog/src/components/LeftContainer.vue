@@ -58,11 +58,8 @@
 
 <style scoped>
  .leftDiv {
-    position: absolute;
-    left: 0px;
-    top: 0px;
-    width: 20%;
-    height: 100%;
+    width: 200px;
+    height: 960px;
     border-right: 2px solid #d9d9d9;
  }
 </style>
