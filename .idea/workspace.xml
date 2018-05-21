@@ -5,10 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3b6953d2-1266-4b66-a212-36288d17f9a7" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/myblog/src/App.vue" afterPath="$PROJECT_DIR$/myblog/src/App.vue" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/myblog/src/components/Javascript.vue" afterPath="$PROJECT_DIR$/myblog/src/components/Javascript.vue" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/myblog/src/components/CSS.vue" afterPath="$PROJECT_DIR$/myblog/src/components/CSS.vue" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/myblog/src/components/LeftContainer.vue" afterPath="$PROJECT_DIR$/myblog/src/components/LeftContainer.vue" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/myblog/src/components/Prototype.vue" afterPath="$PROJECT_DIR$/myblog/src/components/Prototype.vue" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Front-Projects.iws" />
@@ -40,10 +38,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Prototype.vue" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Prototype.vue" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/myblog/src/components/Prototype.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.55595666">
+            <state vertical-scroll-proportion="-9.935484">
               <caret line="14" column="12" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="12" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#template#0;n#!!top" expanded="true" />
@@ -52,11 +50,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CSS.vue" pinned="false" current-in-tab="false">
+      <file leaf-file-name="CSS.vue" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/myblog/src/components/CSS.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="21" column="21" selection-start-line="21" selection-start-column="21" selection-end-line="21" selection-end-column="21" />
+            <state vertical-scroll-proportion="0.6036036">
+              <caret line="24" column="14" selection-start-line="24" selection-start-column="14" selection-end-line="24" selection-end-column="14" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#template#0;n#!!top" expanded="true" />
               </folding>
@@ -67,7 +65,7 @@
       <file leaf-file-name="Login.vue" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/myblog/src/components/Login.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-2.2580645">
+            <state vertical-scroll-proportion="0.0">
               <caret line="23" column="4" selection-start-line="17" selection-start-column="3" selection-end-line="23" selection-end-column="4" />
               <folding />
             </state>
@@ -77,8 +75,8 @@
       <file leaf-file-name="LeftContainer.vue" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/myblog/src/components/LeftContainer.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-43.29032">
-              <caret line="61" column="18" selection-start-line="61" selection-start-column="18" selection-end-line="61" selection-end-column="18" />
+            <state vertical-scroll-proportion="-7.967742">
+              <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -87,7 +85,7 @@
       <file leaf-file-name="App.vue" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/myblog/src/App.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-25.548388">
+            <state vertical-scroll-proportion="0.0">
               <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
               <folding>
                 <element signature="n#style#0;n#div#2;n#div#0;n#template#0;n#!!top" expanded="true" />
@@ -99,7 +97,7 @@
       <file leaf-file-name="Javascript.vue" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/myblog/src/components/Javascript.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.4193548">
+            <state vertical-scroll-proportion="0.0">
               <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
               <folding />
             </state>
@@ -162,13 +160,13 @@
         <option value="$PROJECT_DIR$/myblog/utils/readMe.txt" />
         <option value="$PROJECT_DIR$/myblog/test/ReadMe.txt" />
         <option value="$PROJECT_DIR$/myblog/test/testArray.js" />
-        <option value="$PROJECT_DIR$/myblog/src/components/CSS.vue" />
         <option value="$PROJECT_DIR$/myblog/utils/tools.js" />
         <option value="$PROJECT_DIR$/myblog/src/router/index.js" />
-        <option value="$PROJECT_DIR$/myblog/src/components/LeftContainer.vue" />
         <option value="$PROJECT_DIR$/myblog/src/App.vue" />
         <option value="$PROJECT_DIR$/myblog/src/components/Javascript.vue" />
         <option value="$PROJECT_DIR$/myblog/src/components/Prototype.vue" />
+        <option value="$PROJECT_DIR$/myblog/src/components/LeftContainer.vue" />
+        <option value="$PROJECT_DIR$/myblog/src/components/CSS.vue" />
       </list>
     </option>
   </component>
@@ -180,7 +178,8 @@
     <order />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-34" />
+    <option name="x" value="28" />
+    <option name="y" value="1" />
     <option name="width" value="1382" />
     <option name="height" value="745" />
   </component>
@@ -388,7 +387,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-34" y="0" width="1382" height="745" extended-state="0" />
+    <frame x="28" y="1" width="1382" height="745" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1688988" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -726,7 +725,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="26" selection-start-line="0" selection-start-column="26" selection-end-line="0" selection-end-column="26" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -743,16 +741,6 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="7" column="18" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="19" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/myblog/src/components/CSS.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="21" column="21" selection-start-line="21" selection-start-column="21" selection-end-line="21" selection-end-column="21" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#template#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -776,7 +764,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/myblog/src/components/Login.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.2580645">
+        <state vertical-scroll-proportion="0.0">
           <caret line="23" column="4" selection-start-line="17" selection-start-column="3" selection-end-line="23" selection-end-column="4" />
           <folding />
         </state>
@@ -784,7 +772,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/myblog/src/App.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-25.548388">
+        <state vertical-scroll-proportion="0.0">
           <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
           <folding>
             <element signature="n#style#0;n#div#2;n#div#0;n#template#0;n#!!top" expanded="true" />
@@ -794,24 +782,34 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/myblog/src/components/Javascript.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.4193548">
+        <state vertical-scroll-proportion="0.0">
           <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/myblog/src/components/LeftContainer.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-43.29032">
-          <caret line="61" column="18" selection-start-line="61" selection-start-column="18" selection-end-line="61" selection-end-column="18" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/myblog/src/components/Prototype.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.55595666">
+        <state vertical-scroll-proportion="-9.935484">
           <caret line="14" column="12" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="12" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myblog/src/components/LeftContainer.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.967742">
+          <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myblog/src/components/CSS.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6036036">
+          <caret line="24" column="14" selection-start-line="24" selection-start-column="14" selection-end-line="24" selection-end-column="14" />
           <folding>
             <element signature="n#style#0;n#div#0;n#template#0;n#!!top" expanded="true" />
           </folding>

@@ -25,6 +25,7 @@
          <el-menu-item-group>
            <el-menu-item index="2-1">HTML&&H5</el-menu-item>
            <el-menu-item index="2-2">CSS&CSS3</el-menu-item>
+
            <el-menu-item index="2-3" @click="$router.push('javascript')">JavaScript&&ES6/7/8</el-menu-item>
            <el-menu-item index="2-4">前端框架篇(Vue)</el-menu-item>
            <el-menu-item index="2-5">后端篇(Node)</el-menu-item>
