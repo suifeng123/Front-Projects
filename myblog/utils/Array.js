@@ -29,3 +29,8 @@ Array.prototype.unique = function(){
 
 var newArr = [1,1,1,3,3,3,555,3,4,4,4];
 console.log(newArr.unique());
+
+//实现算法2
+Array.prototype.unique2 = function(){
+     return Array.from(new Set(this));
+}
