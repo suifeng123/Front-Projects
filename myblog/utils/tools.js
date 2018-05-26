@@ -133,4 +133,42 @@ function f2(f3,1);{
     }
 }
 
+function waitSomeTime(msg,time){
+    setTimeout(function(){
+      console.log(msg)
+    },time);
 
+}
+
+
+for(var i = 0 ; i <= 10; i++){
+  setTimeout(function(){
+    console.log(i);
+  },1000);
+}
+
+//解决以上问题
+for(var i = 0; i<= 10; i++){
+  (function(j){
+    setTimeout(function(){
+      console.log(j);
+    },1000)
+  })(i);
+}
+
+function module(){
+     var arr = [];
+     function add(val){
+       if(typeof val == 'number'){
+         arr.push(val);
+       }
+     }
+
+     function get(index){
+          if(index  < arr.length){
+            return arr[index]
+          }else {
+            return null;
+          }
+     }
+}
