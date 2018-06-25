@@ -20,8 +20,10 @@
 </template>
 
 <script>
+  import myMixin from '@/mixins/time'
 export default {
   name: 'HelloWorld',
+  mixins: [myMixin],
   data () {
     return {
       msg: 'Welcome to Your Vue.js App',
