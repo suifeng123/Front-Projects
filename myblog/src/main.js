@@ -13,9 +13,11 @@ Vue.use(ElementUI);
 
 
 /* eslint-disable no-new */
-new Vue({
+var vm = new Vue({
   el: '#app',
   router,
   components: { App },
   template: '<App/>'
 })
+
+export default vm;

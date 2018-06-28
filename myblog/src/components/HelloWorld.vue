@@ -15,6 +15,9 @@
           <el-button>取消</el-button>
        </el-form-item>
 
+      <span>{{message.split('').reverse().join('')}}</span>
+
+
     </el-form>
   </div>
 </template>
@@ -27,6 +30,7 @@ export default {
   data () {
     return {
       msg: 'Welcome to Your Vue.js App',
+      message:"hello world",
       form:{
         id:"",
         content:"",
