@@ -17,6 +17,27 @@
 
       <span>{{message.split('').reverse().join('')}}</span>
 
+      <div class="myslie" v-bind:class="{active: isActive}"></div>
+      <!-- 进行部分的显示操作 -->
+      <template v-if="loginType=='username'">
+        <label>Username</label>
+        <input placeholder="Enter the name" key="username-input">
+
+      </template>
+      <template v-else>
+        <label>Email</label>
+        <input placeholder="Enter the Email" key="email-input">
+      </template>
+
+      <ul id="v-for-object" class="demo">
+        <li v-for="value in object">
+          {{value}}
+        </li>
+      </ul>
+
+      <!-- 进行button 事件的显示 -->
+      <button v-on:click="greet">点击</button>
+
 
     </el-form>
   </div>
@@ -34,8 +55,16 @@ export default {
       form:{
         id:"",
         content:"",
-        title:""
-      }
+        title:"",
+
+      },
+      object:{
+        firstName:'Wsw',
+        lastName:'wang',
+        age:29
+      },
+      isActive: true,
+      loginType:'username'
     }
   },
   methods:{
@@ -53,7 +82,11 @@ export default {
            console.log(err);
 
        })
-      }
+      },
+    greet(event){
+      console.log("进行事件的显示");
+      console.log(event);
+   }
   }
 }
 </script>
@@ -81,4 +114,8 @@ li {
 a {
   color: #42b983;
 }
+
+  .active{
+
+  }
 </style>
