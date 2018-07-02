@@ -38,18 +38,20 @@
       <!-- 进行button 事件的显示 -->
       <button v-on:click="greet">点击</button>
 
-
+     <myComponent :name="name"></myComponent>
     </el-form>
   </div>
 </template>
 
 <script>
   import myMixin from '@/mixins/time'
+  import myComponent from './myComponent'
 export default {
   name: 'HelloWorld',
   mixins: [myMixin],
   data () {
     return {
+      name:'myBtn',
       msg: 'Welcome to Your Vue.js App',
       message:"hello world",
       form:{
@@ -87,6 +89,9 @@ export default {
       console.log("进行事件的显示");
       console.log(event);
    }
+  },
+  components:{
+    myComponent
   }
 }
 </script>
