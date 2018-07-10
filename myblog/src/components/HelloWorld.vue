@@ -35,10 +35,15 @@
         </li>
       </ul>
 
-      <!-- 进行button 事件的显示 -->
-      <button v-on:click="greet">点击</button>
 
-     <myComponent :name="name"></myComponent>
+
+     <!-- 一个展示fade显示  -->
+      <button v-on:click="show = !show">
+        Toggle
+      </button>
+      <transition name="fade">
+        <p v-if="show">hello</p>
+      </transition>
     </el-form>
   </div>
 </template>
@@ -51,6 +56,7 @@ export default {
   mixins: [myMixin],
   data () {
     return {
+      show: true,
       name:'myBtn',
       msg: 'Welcome to Your Vue.js App',
       message:"hello world",
@@ -98,6 +104,12 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+  .fade-enter-active, .fade-leave-active {
+    transition: opacity .5s;
+  }
+  .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+    opacity: 0;
+  }
 .hello{
   position: absolute;
   left:25%;
