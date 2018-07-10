@@ -1,81 +1,40 @@
 <template>
   <div class="hello">
-    <el-form ref="form" :model="form">
-       <el-form-item label="id号">
-            <el-input v-model="form.id"></el-input>
-       </el-form-item>
-       <el-form-item  label="头衔">
-            <el-input v-model="form.title"></el-input>
-       </el-form-item>
-       <el-form-item label="内容">
-            <el-input type="textarea" rows="5" cols="5" v-model="form.content"></el-input>
-       </el-form-item>
-       <el-form-item>
-          <el-button type="primary" @click="onSubmit">立即创建</el-button>
-          <el-button>取消</el-button>
-       </el-form-item>
-
-      <span>{{message.split('').reverse().join('')}}</span>
-
-      <div class="myslie" v-bind:class="{active: isActive}"></div>
-      <!-- 进行部分的显示操作 -->
-      <template v-if="loginType=='username'">
-        <label>Username</label>
-        <input placeholder="Enter the name" key="username-input">
-
-      </template>
-      <template v-else>
-        <label>Email</label>
-        <input placeholder="Enter the Email" key="email-input">
-      </template>
-
-      <ul id="v-for-object" class="demo">
-        <li v-for="value in object">
-          {{value}}
-        </li>
-      </ul>
-
-
 
      <!-- 一个展示fade显示  -->
-      <button v-on:click="show = !show">
-        Toggle
-      </button>
-      <transition name="fade">
-        <p v-if="show">hello</p>
-      </transition>
-    </el-form>
+
   </div>
 </template>
 
 <script>
   import myMixin from '@/mixins/time'
   import myComponent from './myComponent'
+  import mixin from '@/mixins/arr'
 export default {
   name: 'HelloWorld',
-  mixins: [myMixin],
-  data () {
+  mixins: [mixin],
+  mounted: function(){
+    console.log("打印部分属性");
+    console.log(this.data);
+     console.log(this.$data);
+  },
+  data() {
     return {
-      show: true,
-      name:'myBtn',
-      msg: 'Welcome to Your Vue.js App',
+      data:'121212',
       message:"hello world",
-      form:{
-        id:"",
-        content:"",
-        title:"",
 
-      },
-      object:{
-        firstName:'Wsw',
-        lastName:'wang',
-        age:29
-      },
-      isActive: true,
-      loginType:'username'
     }
   },
   methods:{
+      randomIndex(){
+          return Math.floor(Math.random() * this.items.length)
+      },
+      add(){
+          this.items.splice(this.randomIndex(),0,this.nextNum++)
+      },
+      remove(){
+          this.items.splice(this.randomIndex(),1)
+      },
       onSubmit(){
         console.log('进行提交');
         this.axios.post('/api/adduser',{
@@ -104,6 +63,19 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+  .list-item{
+    display: inline-block;
+    margin-right: 10px;
+  }
+
+  .list-enter-active,.list-leave-active {
+    transition: all 1s;
+  }
+  .list-enter,.list-leave-to{
+    opacity: 0;
+    transform: translateY(30);
+  }
+
   .fade-enter-active, .fade-leave-active {
     transition: opacity .5s;
   }
