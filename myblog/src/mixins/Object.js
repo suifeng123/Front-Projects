@@ -11,3 +11,18 @@ if(!object.create){
     return F();
   }
 }
+
+//创建代理的操作
+let person = {
+  name:'张三'
+};
+
+let proxy = new Proxy(person,{
+    get:(target,property){
+       if(property in target){
+         return target[property];
+       }else{
+         throw new ReferenceError('Property\"'+ property +'\" does not exist');
+       }
+    }
+})
