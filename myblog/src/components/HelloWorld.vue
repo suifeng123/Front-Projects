@@ -7,16 +7,10 @@
 </template>
 
 <script>
-  import myMixin from '@/mixins/time'
   import myComponent from './myComponent'
-  import mixin from '@/mixins/arr'
 export default {
   name: 'HelloWorld',
-  mixins: [mixin],
   mounted: function(){
-    console.log("打印部分属性");
-    console.log(this.data);
-     console.log(this.$data);
   },
   data() {
     return {
