@@ -13,14 +13,6 @@ Vue.use(ElementUI);
 
 //进行路由的守卫函数
 
-router.beforeEach((to,from,next) => {
-   next();
-})
-
-router.beforeResovle((to,from,next) => {
-    next();
-
-})
 
 
 /* eslint-disable no-new */
