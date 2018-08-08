@@ -139,4 +139,13 @@ function isObject(value){
 	return Object(value) === value;
 }
 
-
+var obj = new Proxy({},{
+	get: fucntion(target,key,receiver){
+		console.log(`getting ${key}`);
+		return Reflect.get(target,key,receiver);
+	},
+	set: function(target,key,value,receiver){
+		console.log(`setting ${key}`);
+		return ""
+	}
+})
