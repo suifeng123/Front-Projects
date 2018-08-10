@@ -149,3 +149,44 @@ var obj = new Proxy({},{
 		return ""
 	}
 })
+
+var person = {
+	name:'张三'
+};
+
+var proxy = new Proxy(person,{
+	get: function(target,property){
+		if(property in target){
+			return target[property]
+		}else{
+			throw new Error('不存在此属性');
+		}
+	}
+})
+
+
+var  proto = new Proxy({},{
+	get(target,property,receiver){
+		console.log('GET'+property);
+		return target[property];
+	}
+});
+
+let obj = Object.create(proto);
+
+//进行数组的负数索引
+function createArray(...elements){
+	let handler = {
+		get(target,propKey,receiver){
+			let index = Number(propKey);
+			if(index  < 0){
+				propKey = String(target.length  + index);
+			}
+			return Reflect.get(target,propKey,receiver);
+		}
+	};
+
+	let target = [];
+	target.push(...elements);
+	return new Proxy(target,handler);
+}
