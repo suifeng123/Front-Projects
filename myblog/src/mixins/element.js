@@ -67,3 +67,52 @@ export default class Element{
     return el;
   }
 }
+
+
+let validator = {
+  set: function(obj,prop,value){
+    if(prop=='age'){
+      if(!Number.isInteger(value)){
+        throw new TypeError('The age is not an integer');
+      }
+
+      if(age > 200){
+        throw new RangeError('The age seems invalid')
+      }
+    }
+    //对于age 以外的属性
+    obj[prop] = value;
+  }
+}
+
+var handler  = {
+  has(target,key){
+    if(key[0] === '_'){
+      return false;
+    }
+    return key in target;
+  }
+};
+
+var target = {_prop:'foo',prop:'foo'};
+var proxy = new Proxy(target,handler);
+"_prop" in proxy;
+
+
+//进行拦截属性的操作
+var  handler = {
+  deleteProperty(target,key){
+    invariant(target,key);
+    return true;
+  }
+}
+
+function invariant(key,action){
+  if(key[0] === '_'){
+    throw new Error(`Invalid attempt to ${action} private "${key}" property`);
+  }
+}
+
+var target = {_prop:'foo'};
+var proxy = new Proxy(target,handler);
+delete proxy._prop;

@@ -2,23 +2,15 @@
   <div class="hello">
 
      <!-- 使用css展示一个六扇形状 -->
-    <div class="aa">
-    </div>
-    <div style="height:10px;"></div>
-    <div class="border-style"></div>
-    <div style="height: 10px"></div>
-    <div class="border"></div>
-    <div style="height: 10px"></div>
    
-
-    <!-- 下面编写一个ul的对话框的数据 -->
-    <digui></digui>
+     <circleRipple></circleRipple>
   </div>
 </template>
 
 <script>
   import myComponent from './myComponent'
   import digui from './digui'
+  //import circleRipple from '../internal/circleRipple'
 export default {
   name: 'HelloWorld',
   mounted: function(){
