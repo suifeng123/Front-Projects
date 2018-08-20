@@ -3,14 +3,19 @@
 
      <!-- 使用css展示一个六扇形状 -->
    
-     <circleRipple></circleRipple>
+     <overlay :show.sync="show" @click="handleClick">
+       
+       <slot name="header"></slot>
+   
+     </overlay>
   </div>
 </template>
 
 <script>
-  import myComponent from './myComponent'
-  import digui from './digui'
-  //import circleRipple from '../internal/circleRipple'
+import myComponent from './myComponent'
+import digui from './digui'
+//进行引入相应
+import overlay from './overlay'
 export default {
   name: 'HelloWorld',
   mounted: function(){
@@ -19,13 +24,16 @@ export default {
     return {
       data:'121212',
       message:"hello world",
+      show: true
     }
   },
   methods:{
-
+       handleClick(){
+       	console.log("this is a click");
+       }
   },
   components:{
-      digui
+      overlay
   },
    mounted(){
       
