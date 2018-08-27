@@ -11,10 +11,6 @@ Vue.config.productionTip = false
 Vue.prototype.axios = axios; //使用组件
 Vue.use(ElementUI);
 
-//进行路由的守卫函数
-
-
-
 /* eslint-disable no-new */
 var vm = new Vue({
   el: '#app',
