@@ -18,5 +18,9 @@ var vm = new Vue({
   components: { App },
   template: '<App/>'
 })
-
+//从上面的写法可以看出   本身Vue应用为一个对象，其中传入的参数为
+// el : 挂载点
+// router: 路由信息
+// components: 组件信息
+//  template:  模板信息 
 export default vm;
