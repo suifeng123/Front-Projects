@@ -2,17 +2,17 @@
   <div class="hello">
 
      <!-- 使用css展示一个六扇形状 -->
-   
-     <canvas></canvas>
+    
+    <el-button @click="open()">打开</el-button>
+    <message></message>
   </div>
 </template>
 
 <script>
-import myComponent from './myComponent'
-import digui from './digui'
+
 import  * as THREE from 'three' //
-//进行引入相应
-import overlay from './overlay'
+import alert from './alert'
+import message from './message'
 export default {
   name: 'HelloWorld',
   mounted: function(){
@@ -27,33 +27,16 @@ export default {
   methods:{
        handleClick(){
        	console.log("this is a click");
+       },
+       open(){
+
        }
   },
   components:{
-      overlay
+      alert,
+      message
   },
    mounted(){
-      
-    console.log(THREE)  
-    var scene = new THREE.scene()
-    var camera = new THREE.PerspectiveCamera(75,innerWidth/window.innerHeight,0.1,1000)
-    var renderer = new Three.WebGLRenderer()
-    render.setSize(window.innerWidth,window.innerHeight)
-
-    document.body.appendChild(renderer.domElement)
-    var geometry = new THREE.CubeGeomtry(1,1,1)
-    var meterial = new THREE.MeshBasicMaterial({color:0x00ff00});
-    var cube = new THREE.Mesh(geometry,material);
-    scene.add(cube)
-    camera.position.z = 5;
-    function render(){
-    	requestAnimationFrame(render)
-    	cube.rotation.x += 0.1
-    	cube.rotation.y += 0.1
-    	renderer.render(scene,camera)
-    }
-    render()
-
 
    }
 }
