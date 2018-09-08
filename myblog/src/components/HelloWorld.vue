@@ -4,7 +4,10 @@
      <!-- 使用css展示一个六扇形状 -->
     
     <el-button @click="open()">打开</el-button>
-    <message></message>
+    <container>
+      <header>Header</header>
+      <main>Main</main>
+   </container>
   </div>
 </template>
 
@@ -13,6 +16,8 @@
 import  * as THREE from 'three' //
 import alert from './alert'
 import message from './message'
+//引入布局组件
+import container from './container'
 export default {
   name: 'HelloWorld',
   mounted: function(){
@@ -34,7 +39,7 @@ export default {
   },
   components:{
       alert,
-      message
+      container
   },
    mounted(){
 
