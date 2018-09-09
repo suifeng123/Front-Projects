@@ -2,12 +2,7 @@
   <div class="hello">
 
      <!-- 使用css展示一个六扇形状 -->
-    
-    <el-button @click="open()">打开</el-button>
-    <container>
-      <header>Header</header>
-      <main>Main</main>
-   </container>
+     <myButton @click="handleClick" type="primary">按钮</myButton>
   </div>
 </template>
 
@@ -18,6 +13,7 @@ import alert from './alert'
 import message from './message'
 //引入布局组件
 import container from './container'
+import myButton from './button'
 export default {
   name: 'HelloWorld',
   mounted: function(){
@@ -30,16 +26,16 @@ export default {
     }
   },
   methods:{
-       handleClick(){
-       	console.log("this is a click");
-       },
-       open(){
+       handleClick(e){
 
+       	console.log('从子组件中传输过来的事件');
+       	console.log(e);
        }
   },
   components:{
       alert,
-      container
+      container,
+      myButton
   },
    mounted(){
 
