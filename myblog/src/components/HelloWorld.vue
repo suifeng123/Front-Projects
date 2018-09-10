@@ -2,18 +2,14 @@
   <div class="hello">
 
      <!-- 使用css展示一个六扇形状 -->
-     <myButton @click="handleClick" type="primary">按钮</myButton>
+    
   </div>
 </template>
 
 <script>
 
 import  * as THREE from 'three' //
-import alert from './alert'
-import message from './message'
-//引入布局组件
-import container from './container'
-import myButton from './button'
+
 export default {
   name: 'HelloWorld',
   mounted: function(){
@@ -33,9 +29,7 @@ export default {
        }
   },
   components:{
-      alert,
-      container,
-      myButton
+     
   },
    mounted(){
 
