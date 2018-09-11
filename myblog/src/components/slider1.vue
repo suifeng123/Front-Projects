@@ -2,14 +2,15 @@
 <!--  进行一个slider的css实现 -->
 <div class="slider__runway">
    <div class="slider__bar" style="width: 18%;left: 0;">
-   	 <div class="slider__button-wrapper" style="left:18%;">
-   	   <!-- 进行里面的圆球的编写 -->
-   	    <div class="slider__button tooltip">
-   	    </div>
-   	 </div>
    </div>
+   <div class="slider__button-wrapper" style="left:18%;">
+   	   <!-- 进行里面的圆球的编写 -->
+   	    <div class="slider__button tooltip"></div>
+   	 </div>
 </div>
 </template>
+<script>
+</script>
 <style scoped>
 .tooltip{
 	display: inline-block;
@@ -46,7 +47,7 @@
 	width: 36px;
 	z-index:1001;
 	position: absolute;
-	top: -15px;
+	top: -8px;
 	transform: translateX(-50%);
 	background-color: transparent;
 	text-align: center;
