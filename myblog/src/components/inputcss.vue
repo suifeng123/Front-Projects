@@ -14,7 +14,76 @@
       @mouseenter="hovering = true"
       @mouseleave="hovering = false"
 >
-    <input type="text" autocomplete="off" placeholder="请输入内容" class="input-inner">
+   <!-- 按正常的 如果是正常的输入元素的时候  进行一个text的元素的编写 -->
+   <template v-if="type !== 'textarea'">
+          <!-- 进行前置元素的编写 -->
+          <div class="input-group__prepend" v-if="$slots.prepend">
+              <slot name="prepend"></slot>
+          </div>
+          <input :tabindex="tabindex"
+               v-if="type !== 'textarea'"
+               class="input__inner"
+               v-bind="$attrs"
+               :type="type"
+               :disabled="inputDisabled"
+               :readonly="readonly"
+               :autocomplete="autoComplete"
+               :value="currentValue"
+               ref="input"
+               @compositionstart="handleComposition"
+               @compositionupdate="handleComposition"
+               @compositionend="handleComposition"
+               @input="handleInput"
+               @focus="handleFocus"
+               @blur="handleBlur"
+               @change="handleChange"
+               :aria-label="label"
+               >
+               <!--进行前置内容的显示-->
+               <span class="input__prefix" v-if="$slots.prefix || prefixIcon">
+                    <slot name="prefix"></slot>
+                    <i class="input__icon" v-if="prefixIcon"
+                    :class="prefixIcon">
+                    </i>
+               </span>
+               <!--后置内容的显示 -->
+               <span class="input__suffix"
+                    v-if="$slots.suffix || suffixIcon || showClear || validateState &&
+                    needStatusIcon">
+                      <span class="input__suffix-inner">
+                           <template v-if="!showClear">
+                              <slot name="suffix"></slot>
+                              <i class="input__icon" v-if="suffixIcon"
+                                 :class="suffixIcon">
+                              </i>
+                           </template>
+                           <i v-else
+                               class="input__icon icon-circle-close input__clear"
+                               @clear="clear">
+                            </i>
+                      </span>
+                      <i class="input__icon"
+                          v-if="validateState"
+                          :class="['input__validateIcon',validateIcon]">
+                      </i>
+                </span>
+                <!-- 进行后置元素 -->
+                <div class="input-group__append" v-if="$slots.append">
+                    <slot name="append"></slot>
+                </div>
+   </template>
+    <!-- 如果不是正常的input的组件的话 就显示textarea 的显示 -->
+    <textarea
+       v-else
+       :tabindex="tabindex"
+       class="textarea__inner"
+       :value="currentValue"
+       @compositionstart="handleComposition"
+       @compositionupdate="handleComposition"
+       @compositionend="handleComposition"
+       @input="handleInput"
+       ref="textarea"
+       v-bind="$attrs"
 </div>
 </template>
 <style scoped>
