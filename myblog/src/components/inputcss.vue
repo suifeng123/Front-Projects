@@ -84,8 +84,26 @@
        @input="handleInput"
        ref="textarea"
        v-bind="$attrs"
+       :disabled="inputDisabled"
+       :readonly="readonly"
+       :style="textareaStyle"
+       @focus="handleFocus"
+       @blur="handleBlur"
+       @change="handleChange"
+       :aria-label="label"
+       ></textarea>
+
 </div>
 </template>
+<script>
+import emitter from './emitter';
+import Migrating from './migrating';
+import calcTextareaHeight from './calcTextareaHeight';
+import merge from './merge';
+import { isKorean } from './shared';
+
+
+</script>
 <style scoped>
 .input {
 	position: relative;
