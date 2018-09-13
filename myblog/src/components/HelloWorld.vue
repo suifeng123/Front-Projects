@@ -3,7 +3,8 @@
 
      <!-- 使用css展示一个六扇形状 -->
      <div style="width: 50%;">
-      <slider></slider>
+   
+      <inputDOM></inputDOM>
       </div>
   </div>
 </template>
@@ -12,6 +13,7 @@
 
 import  * as THREE from 'three' //
 import slider from './slider1';
+import inputDOM from './inputcss'
 export default {
   name: 'HelloWorld',
   mounted: function(){
@@ -31,10 +33,10 @@ export default {
        }
   },
   components:{
-       slider
+       inputDOM
   },
    mounted(){
-
+     
    }
 }
 </script>

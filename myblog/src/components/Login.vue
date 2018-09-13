@@ -36,6 +36,7 @@
   methods:{
     onSubmit(){
       //登录成功后登录
+      /*
       this.axios.post('/api/login',{
         "username": this.form.username,
         "password": this.form.password
@@ -47,6 +48,8 @@
          console.log(err);
 
     })
+    **/
+    this.$router.push('dashboard');
 
     }
   }
