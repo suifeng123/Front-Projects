@@ -1,6 +1,19 @@
 <template>
 <!-- 写一个组件用于展示input组件的css的作用-->
-<div class="input">
+<div :class="[
+     type === 'textarea' ? 'textarea' : 'input',
+     {
+     	'is-disabled': inputDisabled,
+     	'input-group': $slots.prepend || $slot.append,
+     	'input-group--append': $slots.append,
+     	'input-group--prepend': $slots.prepend,
+     	'input--prefix': $slots.prefix || prefixIcon,
+     	'input--suffix': $slots.suffix || suffixIcon || clearable
+     }
+]"
+      @mouseenter="hovering = true"
+      @mouseleave="hovering = false"
+>
     <input type="text" autocomplete="off" placeholder="请输入内容" class="input-inner">
 </div>
 </template>
