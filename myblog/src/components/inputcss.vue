@@ -102,6 +102,137 @@ import calcTextareaHeight from './calcTextareaHeight';
 import merge from './merge';
 import { isKorean } from './shared';
 
+export default{
+	mixins: [emitter,Migrating],
+
+	inheritAttrs: false,
+
+	inject:{
+		elForm:{
+			default:''
+		},
+		elFormItem:{
+			default:''
+		}
+	},
+
+	data(){
+		return {
+			currentValue: this.value === undefined || this.value === null ? '': this.value,
+			textareaStyle: {},
+			hovering: false,
+			focused:false,
+			isOnComposition: false,
+			valueBeforeComposition: null
+		};
+	},
+
+	props:{
+		value:[String,Number],
+		size: String,
+		resize: String,
+		form: String,
+		disabled: Boolean,
+		readonly: Boolean,
+		type:{
+			type: String,
+			default: 'text'
+		},
+		autosize:{
+			type:[Boolean,Object],
+			default: false
+		},
+		autoComplete:{
+			type: String,
+			default: 'off'
+		},
+		validateEvent: {
+			type: Boolean,
+			default: true
+		},
+		suffixIcon: String,
+		prefixIcon: String,
+		label: String,
+		clearable:{
+			type: Boolean,
+			default: false
+		},
+		tabindex: String,
+	},
+
+	computed:{
+		_elFormItemSize(){
+			return (this.elFormItem || {}).elFormItemSize;
+		},
+		validateState(){
+			return this.elFormItem ? this.elFormItem.validateState : ""
+		},
+		needStatusIcon(){
+			return this.elForm ? this.elForm.statusIcon : false
+		},
+		validateIcon(){
+			return {
+				validating: 'el-icon-loading',
+				success: 'el-icon-circle-check',
+				error:'el-icon-circle-close'
+			}[this.validateState];
+		},
+		textareaStyle(){
+			return merge({},this.textareaStyle,{resize: this.resize});
+		},
+		inputSize(){
+			return this.size || this._elFormItemSize ||(this.$ELEMENT || {}).size;
+		},
+		inputDisabled(){
+			return this.disabled || (this.elForm || {}).disabled;
+		},
+		showClear(){
+			return this.clearable && !this.disabled && !this.readonly && this.currentValue !== '' && (this.focused || this.hovering);
+		}
+	},
+
+	watch:{
+		value(val,oldValue){
+			this.setCurrentValue(val);
+		}
+	},
+
+	methods:{
+		focus(){
+			(this.$refs.input || this.$refs.textarea).focus();
+		},
+		blur(){
+			(this.$refs.input || this.$refs.textarea).blur();
+		},
+		getMigratingConfig(){
+			return {
+				props: {
+					'icon': 'icon is removed, use suffix-icon / prefix-icon instead.',
+                    'on-icon-click': 'on-icon-click is removed.'
+				},
+				events:{
+					'click': 'click is removed'
+				}
+			};
+		},
+
+		handleBlur(event){
+			this.focused = false;
+			this.$emit('blur',event);
+			if(this.validateEvent){
+				this.dispatch('ElFormItem','el.form.blur',[this.currentValue]);
+			}
+		},
+
+		select(){
+			(this.$refs.input || this.$refs.textarea).select();
+		},
+
+		resizeTextarea(){
+			if(this.$isServer) return;
+		}
+	}
+}
 
 </script>
 <style scoped>
