@@ -172,9 +172,9 @@ export default{
 		},
 		validateIcon(){
 			return {
-				validating: 'el-icon-loading',
-				success: 'el-icon-circle-check',
-				error:'el-icon-circle-close'
+				validating: 'icon-loading',
+				success: 'icon-circle-check',
+				error:'icon-circle-close'
 			}[this.validateState];
 		},
 		textareaStyle(){
@@ -230,8 +230,108 @@ export default{
 
 		resizeTextarea(){
 			if(this.$isServer) return;
-		}
-	}
+			const { autosize,type } = this;
+			if(type !== 'textarea') return;
+			if(!autosize){
+				this.textareaCalcStyle = {
+					minHeight: calcTextareaHeight(this.$refs.textarea).minHeight
+				};
+
+				return;
+			}
+
+			const minRows = autosize.minRows;
+			const maxRows = autosize.maxRows;
+
+			this.textareaCalcStyle = calcTextareaHeight(this.$refs.textarea,minRows,maxRows);
+		},
+		handleFocus(event){
+			this.focused = true;
+			this.$emit('focus',event);
+		},
+		handleComposition(event){
+			if (event.type === 'tjhoicompositionend') {
+          this.isOnComposition = false;
+          this.currentValue = this.valueBeforeComposition;
+          this.valueBeforeComposition = null;
+          this.handleInput(event);
+        } else {
+          const text = event.target.value;
+          const lastCharacter = text[text.length - 1] || '';
+          this.isOnComposition = !isKorean(lastCharacter);
+          if (this.isOnComposition && event.type === 'compositionstart') {
+            this.valueBeforeComposition = text;
+          }
+        }
+    },
+
+    handleInput(event){
+    	const value = event.target.value;
+    	this.setCurrentValue(value);
+    	if(this.isOnComposition) return;
+    	this.$emit('input',value);
+    },
+    handleChange(event){
+        this.$emit('change',event.target.value);
+    },
+    setCurrentValue(value){
+    	if(this.isOnComposition && value === this.valueBeforeComposition) return;
+    	this.currentValue = value;
+    	if(this.isOnComposition) return;
+    	this.$nextTick(this.resizeTextarea);
+    	if(this.validateEvent && this.currentValue === this.value){
+    		this.dipatch('ElFormItem','el.form.change',[value]);
+    	}
+    },
+    calcIconOffset(place){
+    	let elList = [].slice.call(this.$el.querySelectorAll(`.input__${place}`) || []);
+        if(!elList.length) return;
+        let el = null;
+        for(let i = 0 ; i < elList.length; i++){
+        	if(elList[i].parentNode === this.$el){
+        		el = elList[i];
+        		break;
+        	}
+        }
+        if(!el) return;
+        const pendantMap = {
+        	suffix: 'append',
+        	prefix: 'prepend'
+        };
+
+
+        const pendant = pendantMap[place];
+        if(this.$slots[pendant]){
+        	el.style.transform = `translateX(${place === 'suffix' ? '-' : ''}${this.$el.querySelector(`.input-group__${pendant}`).offsetWidth}px)`;
+        } else {
+          el.removeAttribute('style');
+        }
+    },
+    updateIconOffset(){
+    	this.calcIconOffset('prefix');
+    	this.calcIconOffset('suffix');
+    },
+    clear(){
+    	this.$emit('input','');
+    	this.$emit('change','');
+    	this.$emit('clear');
+    	this.setCurrentValue('');
+    	this.focus();
+    }
+ },
+
+ created(){
+ 	this.$on('inputSize',this.select);
+ },
+
+ mounted(){
+ 	this.resizeTextarea();
+ 	this.updateIconOffset();
+ },
+
+ update(){
+ 	this.$nextTick(this.updateIconOffset);
+ }
 }
 
 </script>
