@@ -3,13 +3,8 @@
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/myblog/build/webpack.base.conf.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/myblog/src/App.vue" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/myblog/src/components/CSS.vue" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/myblog/src/components/FileUpLoad.vue" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/myblog/src/components/Javascript.vue" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/myblog/src/components/LeftContainer.vue" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/myblog/src/components/Login.vue" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/myblog/src/components/Prototype.vue" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/myblog/src/components/myComponent.vue" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/myblog/src/mixins/Object.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/myblog/src/mixins/arr.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/myblog/src/mixins/element.js" charset="UTF-8" />

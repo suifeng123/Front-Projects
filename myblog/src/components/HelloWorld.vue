@@ -3,17 +3,14 @@
 
      <!-- 使用css展示一个六扇形状 -->
      <div style="width: 50%;">
-   
-      <inputDOM></inputDOM>
+        <myButton>按钮</myButton>
       </div>
   </div>
 </template>
 
 <script>
+import myButton from './myButton' //引入子组件
 
-import  * as THREE from 'three' //
-import slider from './slider1';
-import inputDOM from './inputcss'
 export default {
   name: 'HelloWorld',
   mounted: function(){
@@ -33,7 +30,7 @@ export default {
        }
   },
   components:{
-       inputDOM
+      myButton 
   },
    mounted(){
      
