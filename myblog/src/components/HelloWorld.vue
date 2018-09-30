@@ -3,7 +3,7 @@
 
      <!-- 使用css展示一个六扇形状 -->
      <div style="width: 50%;">
-        <myButton>按钮</myButton>
+        <myButton type="primary" :loading="true">加载中</myButton>
       </div>
   </div>
 </template>
