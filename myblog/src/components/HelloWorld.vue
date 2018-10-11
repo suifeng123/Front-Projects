@@ -3,13 +3,20 @@
 
      <!-- 使用css展示一个六扇形状 -->
      <div style="width: 50%;">
-        <myButton type="primary" :loading="true">加载中</myButton>
+       <myCard>
+        <div slot="header">
+            <span>卡片名称</span>
+        </div>
+        <div v-for="o in 4" :key="o">
+            {{'列表内容' + o}}
+        </div>
+        </myCard>
       </div>
   </div>
 </template>
 
 <script>
-import myButton from './myButton' //引入子组件
+import myCard from './card' //引入子组件
 
 export default {
   name: 'HelloWorld',
@@ -30,8 +37,8 @@ export default {
        }
   },
   components:{
-      myButton 
-  },
+      myCard
+    },
    mounted(){
      
    }

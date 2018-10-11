@@ -18,6 +18,16 @@
  	color: #303133;
  	transition: .3s;
  }
+ .my-card.is-always-shadow,.my-card.is-hover-shadow:focus,.el-card.is-hover-shadow:hover{
+ 	  box-shadow: 0 2px 12px 0 rgba(0,0,0,.1);
+ }
+
+ .my-card__header {
+    padding: 18px 20px;
+    border-bottom: 1px solid #ebeef5;
+    box-sizing: border-box;	
+ }
+
 </style>
 <script>
   export default {
