@@ -11,6 +11,14 @@
             {{'列表内容' + o}}
         </div>
         </myCard>
+
+        <br />
+        <br /> <!-- 进行简单卡片的展示 -->
+        <myCard>
+            <div v-for="o in 4" :key="o">
+                {{'列表内容' + o}}
+            </div>
+        </myCard>
       </div>
   </div>
 </template>

@@ -28,6 +28,10 @@
     box-sizing: border-box;	
  }
 
+ .my-card__body {
+ 	padding: 20px;
+ }
+
 </style>
 <script>
   export default {
