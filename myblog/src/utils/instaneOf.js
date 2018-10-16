@@ -15,3 +15,5 @@ console.log(auto instanceof Car);
 console.log(auto instanceof Object);
 //expected output: true
 
+var isObject = Object.prototype.toString.call(value).toLowerCase === '[object object]'; //调用一个关于object的方法
+
