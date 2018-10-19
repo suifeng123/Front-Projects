@@ -3,29 +3,17 @@
 
      <!-- 使用css展示一个六扇形状 -->
      <div style="width: 50%;">
-       <myCard>
-        <div slot="header">
-            <span>卡片名称</span>
-        </div>
-        <div v-for="o in 4" :key="o">
-            {{'列表内容' + o}}
-        </div>
-        </myCard>
-
-        <br />
-        <br /> <!-- 进行简单卡片的展示 -->
-        <myCard>
-            <div v-for="o in 4" :key="o">
-                {{'列表内容' + o}}
-            </div>
-        </myCard>
+        <container>
+           <my-header>Header></my-header>
+           <my-main>Main</my-main>
+        </container>
       </div>
   </div>
 </template>
 
 <script>
-import myCard from './card' //引入子组件
-
+import myCard from './card'          //引入子组件
+import container from './container'  //进行引入相应的
 export default {
   name: 'HelloWorld',
   mounted: function(){
