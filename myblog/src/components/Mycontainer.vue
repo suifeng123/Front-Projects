@@ -66,8 +66,8 @@
 
 <script>
 export default {
-	name: 'ElContainer',
-	componentName: 'ElContainer',
+	name: 'MyContainer',
+	componentName: 'MyContainer',
 
 	props:{
 		direction: String,

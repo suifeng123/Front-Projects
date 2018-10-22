@@ -3,17 +3,17 @@
 
      <!-- 使用css展示一个六扇形状 -->
      <div style="width: 50%;">
-        <container>
+        <MyContainer>
            <my-header>Header></my-header>
            <my-main>Main</my-main>
-        </container>
+        </MyContainer>
       </div>
   </div>
 </template>
 
 <script>
 import myCard from './card'          //引入子组件
-import container from './container'  //进行引入相应的
+import MyContainer from './Mycontainer'  //进行引入相应的
 export default {
   name: 'HelloWorld',
   mounted: function(){
@@ -33,7 +33,8 @@ export default {
        }
   },
   components:{
-      myCard
+      myCard,
+      MyContainer
     },
    mounted(){
      
