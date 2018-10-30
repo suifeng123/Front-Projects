@@ -15,4 +15,6 @@ function init(){
     webGLRenderer.setSize(window.innerWidth,window.innerHeight);
     webGLRenderer.shadowMapEnabled = true;
 
+    //进行绘图  进行必要的
+
 }
