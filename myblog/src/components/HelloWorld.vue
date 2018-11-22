@@ -1,19 +1,13 @@
 <template>
   <div class="hello">
 
-     <!-- 使用css展示一个六扇形状 -->
-     <div style="width: 50%;">
-        <MyContainer>
-           <my-header>Header></my-header>
-           <my-main>Main</my-main>
-        </MyContainer>
-      </div>
+     <myfenye></myfenye>
   </div>
 </template>
 
 <script>
 import myCard from './card'          //引入子组件
-import MyContainer from './Mycontainer'  //进行引入相应的
+import myfenye from './myfenye'
 export default {
   name: 'HelloWorld',
   mounted: function(){
@@ -26,15 +20,10 @@ export default {
     }
   },
   methods:{
-       handleClick(e){
-
-       	console.log('从子组件中传输过来的事件');
-       	console.log(e);
-       }
+      
   },
   components:{
-      myCard,
-      MyContainer
+      myfenye
     },
    mounted(){
      
@@ -44,34 +33,9 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-   canvas{
-   	width: 100%;
-   	height: 100%;
-   }
+   
   .hello{
-
-  }
-  .aa{
-    width: 0px;
-    
-    border:20px solid red;
-    border-right-color: green;
-    border-bottom-color: blue;
-    border-left-color: black;
-  }
-
-  .border-style{
-    width: 0;
-    border:20px solid transparent;
-    border-top-color: blue;
-  }
-  .border{
-
-    width: 0;
-    height:0;
-    border-top: 20px solid blue;
-    border-left: 20px solid red;
-    border-right:20px solid green;
-    border-bottom: none;
+    width: 500px;
+    height: 500px;  
   }
 </style>

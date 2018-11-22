@@ -12,4 +12,7 @@
   </span>
 </template>
 <script>
+  export default {
+  	name: 'ElBreadcrumb'
+  }
 </script>
